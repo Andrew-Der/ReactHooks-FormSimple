@@ -6,11 +6,18 @@ export const TabBarContext = createContext()
 
 export default function TabBar(props) {
 	const { selected, children } = props
+	const [ activeIndex, setActiveIndex ] = useState(selected)
 
 	return (
 		<TabBarContext.Provider value={{
 		}}>
-			<Tabs activeKey={selected}>{children}</Tabs>
+			<Tabs 
+				activeKey={activeIndex}
+				onSelect={(eventKey, e) => {
+					setActiveIndex(eventKey)
+				}}
+			>
+			{children}</Tabs>
 		</TabBarContext.Provider>
 	)
 }
