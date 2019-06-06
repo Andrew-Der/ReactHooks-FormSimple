@@ -33,6 +33,9 @@ export function Month() {
 		return months
 	}
 	const handleEvent = (event) => {
+		// date.setMonth(event.target.value)
+		// onChange(date)
+		// console.log(onChange)
 	    const newDate = new Date(date.getTime())
 	    newDate.setMonth(parseInt(event.target.value))
 	    onChange(newDate)
