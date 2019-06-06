@@ -9,12 +9,21 @@ import { Tab } from "react-bootstrap"
 
 import { useState, useEffect } from 'react'
 
+import { DateField, Month } from './components/DateField'
+
 function App() {
 
   const [email, setEmail] = useState("test")
   useEffect( ()=> {
     console.log(email)
   }, [email])
+
+  const [date, setDate] = useState(new Date())
+  
+  useEffect(() => {
+    console.log("AYY " + date)
+  }, [date])
+
 
   return (
     <div className="App">
@@ -31,6 +40,10 @@ function App() {
                   <Tab title="Sign Up" eventKey={2}>
                     <EmailSimple onChange={setEmail} placeHolder="LadyGaga@apple.com"/>
                     <EmailForced onChange={setEmail} options={["apple.com", "gmail.com", "yahoo.com"]}/>
+                    <DateField date={date} onChange={setDate}>
+                      <Month/>
+                    </DateField>
+                    {date.toDateString()}
                   </Tab>
                 </TabBar>
               </FormSimple>

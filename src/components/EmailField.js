@@ -58,7 +58,5 @@ export function EmailForced (props) {
 			</DropdownButton>
 		</InputGroup>
 		</Form.Group>
-
-
 	)
 }
