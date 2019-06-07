@@ -6,7 +6,7 @@ export function EmailSimple (props) {
 	const {placeHolder, onChange} = props
 	return (
 		<Form.Control 
-		placeHolder={placeHolder}
+		placeholder={placeHolder}
 		onChange={(e) => {
 			onChange(e.target.value)
 		}}
@@ -31,7 +31,7 @@ export function EmailForced (props) {
 			onChange={(e) => {
 				setEmailText(e.target.value)
 			}}
-			placeHolder={placeHolder}/>
+			placeholder={placeHolder}/>
 			<InputGroup.Append>
 				<InputGroup.Text>@</InputGroup.Text>
 			</InputGroup.Append>
@@ -45,7 +45,7 @@ export function EmailForced (props) {
 				if (curr !== selected) {
 					return (
 						<Dropdown.Item
-						eventKey={curr}
+						key={curr}
 						onSelect={(eventKey) => {
 							setSelected(eventKey)
 						}}

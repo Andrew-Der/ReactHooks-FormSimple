@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Container, Row, Col } from "react-bootstrap"
+import { Button, Container, Row, Col } from "react-bootstrap"
 import FormSimple from "./components/FormSimple"
 import TabBar from "./components/TabBar"
 import { EmailSimple, EmailForced } from "./components/EmailField"
@@ -9,7 +9,7 @@ import { Tab } from "react-bootstrap"
 
 import { useState, useEffect } from 'react'
 
-import { DateField, Month } from './components/DateField'
+import { DateField, Month, Year, Day } from './components/DateField'
 
 function App() {
 
@@ -18,12 +18,7 @@ function App() {
     console.log(email)
   }, [email])
 
-  const [date, setDate] = useState(new Date())
-  
-  useEffect(() => {
-    console.log("AYY " + date)
-  }, [date])
-
+  const [date, setDate] = useState(new Date(2019, 5, 70))
 
   return (
     <div className="App">
@@ -41,9 +36,10 @@ function App() {
                     <EmailSimple onChange={setEmail} placeHolder="LadyGaga@apple.com"/>
                     <EmailForced onChange={setEmail} options={["apple.com", "gmail.com", "yahoo.com"]}/>
                     <DateField date={date} onChange={setDate}>
-                      <Month/>
+                      <Month/>-
+                      <Day/>- 
+                      <Year minYear={2000} maxYear={2020}/> 
                     </DateField>
-                    {date.toDateString()}
                   </Tab>
                 </TabBar>
               </FormSimple>
