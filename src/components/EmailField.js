@@ -5,12 +5,15 @@ import { useState, useEffect } from 'react'
 export function EmailSimple (props) {
 	const {placeHolder, onChange} = props
 	return (
-		<Form.Control 
-		placeholder={placeHolder}
-		onChange={(e) => {
-			onChange(e.target.value)
-		}}
-		/>
+		<Form.Group> 
+			<Form.Label>Email</Form.Label>
+			<Form.Control
+			placeholder={placeHolder}
+			onChange={(e) => {
+				onChange(e.target.value)
+			}}
+			/>
+		</Form.Group>
 	)
 }
 

@@ -1,4 +1,5 @@
 import React, { useContext, createContext } from 'react';
+import { Form } from 'react-bootstrap'
 
 export const FormSimpleContext = createContext()
 
@@ -10,7 +11,11 @@ export default function FormSimple(props) {
 			onSubmit : onSubmit,
 			onSuccess : onSuccess
 		}}>
-			<div>{children}</div>
+			<div>
+				<Form>
+					{children}
+				</Form>
+			</div>
 		</FormSimpleContext.Provider>
 	)
 }

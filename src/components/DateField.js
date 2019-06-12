@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useContext, createContext} from 'react'
+import { Form } from 'react-bootstrap'
 
 export const DateFieldContext = createContext()
 
@@ -10,7 +11,12 @@ export function DateField(props) {
 			date : date,
 			onChange : onChange
 		}}>
-			<div>{children}</div>
+			<div>
+				<Form.Group>
+					<Form.Label>Date of Birth</Form.Label>
+						{children}
+				</Form.Group>
+			</div>
 		</DateFieldContext.Provider>
 	)
 }

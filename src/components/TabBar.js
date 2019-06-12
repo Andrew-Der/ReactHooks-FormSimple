@@ -5,8 +5,8 @@ import { Tabs } from 'react-bootstrap'
 export const TabBarContext = createContext()
 
 export default function TabBar(props) {
-	const { selected, children } = props
-	const [ activeIndex, setActiveIndex ] = useState(selected)
+	const { activeIndex, setIndex, children } = props
+	//const [ activeIndex, setActiveIndex ] = useState(selected)
 
 	return (
 		<TabBarContext.Provider value={{
@@ -14,7 +14,7 @@ export default function TabBar(props) {
 			<Tabs 
 				activeKey={activeIndex}
 				onSelect={(eventKey, e) => {
-					setActiveIndex(eventKey)
+					setIndex(eventKey)
 				}}
 			>
 			{children}</Tabs>
